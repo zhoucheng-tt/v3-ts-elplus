@@ -1,0 +1,96 @@
+// 页面进入离开动画
+.fade-enter-active,
+.fade-leave-active {
+  transition: all .2s ease;
+}
+
+.fade-enter-from {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.fade-leave-to {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+// 左移动画
+.slide-left {
+  -webkit-animation: slide-left .5s cubic-bezier(.25, .46, .45, .94) both;
+  animation: slide-left .5s cubic-bezier(.25, .46, .45, .94) both
+}
+
+@-webkit-keyframes slide-left {
+  0% {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.loading-icon {
+  width: 20px;
+  height: 30px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+  animation: loading-icon 1.5s linear infinite;
+}
+
+@keyframes loading-icon {
+  0% {
+    transform: rotateZ(0deg);
+    width: 20px;
+    height: 30px;
+  }
+  25% {
+    transform: rotateZ(180deg);
+    width: 25px;
+    height: 35px;
+  }
+  50% {
+    transform: rotateZ(360deg);
+    width: 20px;
+    height: 30px;
+  }
+  75% {
+    transform: rotateZ(540deg);
+    width: 25px;
+    height: 35px;
+  }
+  100% {
+    transform: rotateZ(720deg);
+    width: 20px;
+    height: 30px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
