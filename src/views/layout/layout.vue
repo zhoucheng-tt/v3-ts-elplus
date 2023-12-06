@@ -72,7 +72,6 @@ const {sideMenuActive} = useMenuActive()
         width: 120px;
         height: calc(100% - 20px);
         margin-bottom: 20px;
-
         overflow-x: hidden;
         border-right: 1px solid #DDE5EB;
 

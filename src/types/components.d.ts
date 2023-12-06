@@ -7,6 +7,9 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    A: typeof import('./../views/css/css-effect/components/A.vue')['default']
+    B: typeof import('./../views/css/css-effect/components/B.vue')['default']
+    C: typeof import('./../views/css/css-effect/components/C.vue')['default']
     ElContainer: typeof import('element-plus/es')['ElContainer']
     ElMain: typeof import('element-plus/es')['ElMain']
     ElMenu: typeof import('element-plus/es')['ElMenu']
@@ -17,12 +20,15 @@ declare module 'vue' {
     ElTabPane: typeof import('element-plus/es')['ElTabPane']
     ElTabs: typeof import('element-plus/es')['ElTabs']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
+    FourDivision: typeof import('./../views/css/css-effect/components/FourDivision.vue')['default']
     Header: typeof import('./../views/layout/components/SideNav/src/Header.vue')['default']
     HeaderTabs: typeof import('./../views/layout/components/HeaderTabs.vue')['default']
+    HoverCard: typeof import('./../views/css/css-effect/components/HoverCard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SideNav: typeof import('./../views/layout/components/SideNav/index.ts')['default']
     SideNavItem: typeof import('./../views/layout/components/SideNav/src/SideNavItem.vue')['default']
+    TerminalDate: typeof import('./../views/ts/ts-effect/components/TerminalDate.vue')['default']
     UserInfoCard: typeof import('./../views/layout/components/UserInfoCard.vue')['default']
   }
 }
