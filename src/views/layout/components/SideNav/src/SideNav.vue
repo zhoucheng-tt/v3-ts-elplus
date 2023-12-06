@@ -30,17 +30,16 @@ const emit = defineEmits(['select'])
 const headertabsContent = useHeaderTabsStore()
 
 function selectMenu(index: string, indexPath: any, route: any) {
-  if (!headertabsContent.hearerTabsIndexList.includes(index)) {
-    headertabsContent.hearerTabsIndexList.push(index)
-    localStorage.setItem('hearerTabsIndexList', headertabsContent.hearerTabsIndexList)
-
-    headertabsContent.headerTabsList.push({
-      routeCode: index,
-      routeName: route.route.path.split('/')[1],
-    })
-    localStorage.setItem('headerTabsList', JSON.stringify(headertabsContent.headerTabsList))
-  }
-
+  // if (!headertabsContent.hearerTabsIndexList.includes(index)) {
+  //   headertabsContent.hearerTabsIndexList.push(index)
+  //   localStorage.setItem('hearerTabsIndexList', headertabsContent.hearerTabsIndexList)
+  //
+  //   headertabsContent.headerTabsList.push({
+  //     routeCode: index,
+  //     routeName: route.route.path.split('/')[1],
+  //   })
+  //   localStorage.setItem('headerTabsList', JSON.stringify(headertabsContent.headerTabsList))
+  // }
   emit('select', index)
 }
 

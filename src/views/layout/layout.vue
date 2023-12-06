@@ -21,7 +21,7 @@
         </el-row>
         <!--内容-->
         <el-row class="route-content">
-          <header-tabs class="header-tabs"></header-tabs>
+          <!--<header-tabs class="header-tabs"></header-tabs>-->
           <el-main class="main">
             <router-view v-slot="{ Component, route }">
               <!-- 动画样式定义在@/styles/animation.scss -->
@@ -93,8 +93,7 @@ const {sideMenuActive} = useMenuActive()
         }
 
         .main {
-          width: calc(100% - 32px);
-          height: calc(100% - 45px);
+          box-sizing: border-box;
           overflow-x: hidden;
           overflow-y: auto;
           position: relative;
