@@ -31,6 +31,7 @@ declare module 'vue' {
     HeaderTabs: typeof import('./../views/layout/components/HeaderTabs.vue')['default']
     HoverCard: typeof import('./../views/css/css-effect/components/HoverCard.vue')['default']
     PageSelect: typeof import('./../views/ele-plus/components/PageSelect.vue')['default']
+    PiantATriangle: typeof import('./../views/css/css-effect/components/PiantATriangle.vue')['default']
     RadioGroup: typeof import('./../views/ele-plus/components/RadioGroup.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

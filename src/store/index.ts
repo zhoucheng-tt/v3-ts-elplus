@@ -24,6 +24,5 @@ export const useGlobalStore = defineStore('global', () => {
     setLocale,
   }
 }, {
-  // 保存在 LocalStorage
-  saveLocal: true
+  saveLocal: true // 保存在 LocalStorage
 })
