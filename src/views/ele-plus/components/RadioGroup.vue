@@ -6,33 +6,43 @@
  * @Path: src/views/test/RadioGroup.vue
 -->
 <template>
-  <div class="">
-    <div>
-      <el-radio-group v-model="applicationType">
-        <el-radio class="industry-item"
-                  v-for="(item,index) in industryList"
-                  :key="index"
-                  :label="item.name"
-                  border>
-          {{ item.name }}
-        </el-radio>
-      </el-radio-group>
-    </div>
-    <div style="margin-top: 20px">
-      <el-radio-group v-model="applicationType1">
-        <el-radio class="industry-item"
-                  v-for="(item,index) in industryList1"
-                  :key="index"
-                  :label="item.name"
-                  border>
-          {{ item.name }}
-        </el-radio>
-      </el-radio-group>
+  <div class="comp-body">
+    <div class="comp-title">{{ label }}</div>
+    <div class="comp-content">
+      <div>
+        <el-radio-group v-model="applicationType">
+          <el-radio class="industry-item flex-center"
+                    v-for="(item,index) in industryList"
+                    :key="index"
+                    :label="item.name"
+                    border>
+            {{ item.name }}
+          </el-radio>
+        </el-radio-group>
+      </div>
+      <div style="margin-top: 20px">
+        <el-radio-group v-model="applicationType1">
+          <el-radio class="industry-item flex-center"
+                    v-for="(item,index) in industryList1"
+                    :key="index"
+                    :label="item.name"
+                    border>
+            {{ item.name }}
+          </el-radio>
+        </el-radio-group>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+const props = defineProps({
+  label: {
+    label: String,
+    default: ''
+  }
+})
+
 const applicationType = ref('')
 const industryList = ref([
   {name: '全部'},
@@ -53,9 +63,6 @@ const industryList1 = ref([
   width: 85px;
   border-radius: 1px;
   margin-right: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
 
   :deep(.el-radio__inner) {

@@ -24,7 +24,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: "/",
-    redirect: '/css-effect',
+    redirect: '/test',
     component: Layout,
     children: [...routers,]
   }]

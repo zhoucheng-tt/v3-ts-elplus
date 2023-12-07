@@ -10,8 +10,15 @@ export interface SideRoute {
 //头部导航路由
 export const routesSide: Array<SideRoute> = [
   {
+    code: 'T000',
+    title: 'test',
+    path: '/test',
+    defaultIcon: 'default.svg',
+    activeIcon: 'active.svg',
+  },
+  {
     code: 'T0001',
-    title: 'Css效果',
+    title: 'Css',
     defaultIcon: 'default.svg',
     activeIcon: 'active.svg',
     children: [
@@ -26,7 +33,7 @@ export const routesSide: Array<SideRoute> = [
   },
   {
     code: 'T0002',
-    title: 'Ts 效果',
+    title: 'Ts',
     defaultIcon: 'default.svg',
     activeIcon: 'active.svg',
     children: [
@@ -40,9 +47,9 @@ export const routesSide: Array<SideRoute> = [
     ],
   },
   {
-    code: 'T000',
-    title: 'test',
-    path: '/test',
+    code: 'T003',
+    title: 'ElementPlus',
+    path: '/ele-plus',
     defaultIcon: 'default.svg',
     activeIcon: 'active.svg',
   },

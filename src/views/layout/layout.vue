@@ -92,6 +92,8 @@ const {sideMenuActive} = useMenuActive()
         }
 
         .main {
+          width: 100%;
+          height: 100%;
           box-sizing: border-box;
           overflow-x: hidden;
           overflow-y: auto;
@@ -104,4 +106,6 @@ const {sideMenuActive} = useMenuActive()
     }
   }
 }
+
+
 </style>
