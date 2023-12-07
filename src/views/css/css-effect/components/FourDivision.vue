@@ -32,7 +32,6 @@ const list = ref([
   {name: 3},
   {name: 4},
 ])
-
 </script>
 
 <style lang='scss' scoped>

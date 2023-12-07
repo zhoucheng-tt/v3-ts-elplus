@@ -16,7 +16,7 @@ export const routesSide: Array<SideRoute> = [
     activeIcon: 'active.svg',
     children: [
       {
-        code: 'T00011',
+        code: 'T0011',
         title: 'Css 效果',
         path: '/css-effect',
         defaultIcon: 'default.svg',
@@ -31,7 +31,7 @@ export const routesSide: Array<SideRoute> = [
     activeIcon: 'active.svg',
     children: [
       {
-        code: 'T00021',
+        code: 'T0021',
         title: 'Ts 效果',
         path: '/ts-effect',
         defaultIcon: 'default.svg',
@@ -40,7 +40,7 @@ export const routesSide: Array<SideRoute> = [
     ],
   },
   {
-    code: 'T0000',
+    code: 'T000',
     title: 'test',
     path: '/test',
     defaultIcon: 'default.svg',

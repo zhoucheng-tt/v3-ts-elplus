@@ -4,10 +4,10 @@ import {reactive} from "vue";
 export const useHeaderTabsStore = defineStore(
   'headertabs', () => {
     let hearerTabsIndexList = reactive([
-      // {routeCode: 'T00011'}
+      // {routeCode: 'T0011'}
     ])
     let headerTabsList = reactive([
-      // {routeCode: 'T00011', routeName: 'css-effect'}
+      // {routeCode: 'T0011', routeName: 'css-effect'}
     ])
 
     return {hearerTabsIndexList, headerTabsList}
