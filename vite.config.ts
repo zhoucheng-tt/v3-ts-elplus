@@ -80,12 +80,12 @@ export default defineConfig({
     https: false,   // 是否开启 https
     // host: true,
     proxy: {
-      // '/certificateApi/': {
-      //   target: 'http://192.168.1.67:17707',
-      //   changeOrigin: true,
-      //   ws: true,
-      //   rewrite: (path) => path.replace(/^\/certificateApi/, ''),
-      // },
+      '/uploadApi/': {
+        target: 'http://192.168.1.67:28080',
+        changeOrigin: true,
+        ws: true,
+        rewrite: (path) => path.replace(/^\/uploadApi/, ''),
+      },
     }
   },
 })

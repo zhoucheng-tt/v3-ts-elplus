@@ -13,6 +13,8 @@ declare module 'vue' {
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCheckbox: typeof import('element-plus/es')['ElCheckbox']
     ElContainer: typeof import('element-plus/es')['ElContainer']
+    ElIcon: typeof import('element-plus/es')['ElIcon']
+    ElInput: typeof import('element-plus/es')['ElInput']
     ElMain: typeof import('element-plus/es')['ElMain']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
@@ -26,6 +28,7 @@ declare module 'vue' {
     ElTabPane: typeof import('element-plus/es')['ElTabPane']
     ElTabs: typeof import('element-plus/es')['ElTabs']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
+    ElUpload: typeof import('element-plus/es')['ElUpload']
     FourDivision: typeof import('./../views/css/css-effect/components/FourDivision.vue')['default']
     Header: typeof import('./../views/layout/components/SideNav/src/Header.vue')['default']
     HeaderTabs: typeof import('./../views/layout/components/HeaderTabs.vue')['default']
@@ -38,6 +41,9 @@ declare module 'vue' {
     SideNav: typeof import('./../views/layout/components/SideNav/index.ts')['default']
     SideNavItem: typeof import('./../views/layout/components/SideNav/src/SideNavItem.vue')['default']
     TerminalDate: typeof import('./../views/ts/ts-effect/components/TerminalDate.vue')['default']
+    UploadFile: typeof import('./../views/ele-plus/components/UploadFile.vue')['default']
+    UploadImg: typeof import('./../views/ele-plus/components/UploadImg.vue')['default']
+    UploadPic: typeof import('./../views/ele-plus/components/UploadPic.vue')['default']
     UserInfoCard: typeof import('./../views/layout/components/UserInfoCard.vue')['default']
   }
 }

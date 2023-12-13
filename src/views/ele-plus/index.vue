@@ -7,6 +7,17 @@
 -->
 <template>
   <div class="mainbody">
+    <div class="item length-comp-box-item">
+      <div style="display: flex;justify-content: center;">
+        <el-button type="primary" @click="uploadChange = !uploadChange">切换</el-button>
+      </div>
+      <UploadImg v-model="avatar"
+                 :cantUpload="uploadChange"
+                 :cantDelete="uploadChange"></UploadImg>
+    </div>
+    <div class="item length-comp-box-item">
+      <UploadFile v-model="fileUrl"></UploadFile>
+    </div>
     <div class="item length-comp-box-item"
          v-for="(item,index) in list"
          :key="index">
@@ -25,6 +36,12 @@ const list = shallowRef([
   {compName: PageSelect, label: '自写分页并实现跨页多选'},
   {compName: RadioGroup, label: '打钩的ElRaido'},
 ])
+
+// 头像上传
+const uploadChange = ref(true)
+const avatar = ref()
+// 上传文件
+const fileUrl = ref()
 </script>
 
 <style lang='scss' scoped>
