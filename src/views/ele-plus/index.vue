@@ -30,11 +30,15 @@
 
 <script setup lang="ts">
 import PageSelect from "@/views/ele-plus/components/PageSelect.vue";
+import TableDbclickUpdate from "@/views/ele-plus/components/TableDbclickUpdate.vue";
 import RadioGroup from "@/views/ele-plus/components/RadioGroup.vue";
+import Carousel from "@/views/ele-plus/components/Carousel.vue";
 
 const list = shallowRef([
   {compName: PageSelect, label: '自写分页并实现跨页多选'},
+  {compName: TableDbclickUpdate, label: '表格双击修改'},
   {compName: RadioGroup, label: '打钩的ElRaido'},
+  {compName: Carousel, label: '自定义图标走马灯'},
 ])
 
 // 头像上传
