@@ -18,9 +18,11 @@
 
 <script setup lang="ts">
 import TerminalDate from "@/views/ts/ts-effect/components/TerminalDate.vue";
+import CopyInputInnerContent from "@/views/ts/ts-effect/components/CopyInputInnerContent.vue";
 
 const list = shallowRef([
   {compName: TerminalDate, label: '时间'},
+  {compName: CopyInputInnerContent, label: '复制输入框内的内容'},
 ])
 </script>
 
