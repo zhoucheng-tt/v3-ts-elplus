@@ -48,6 +48,7 @@ declare module 'vue' {
     SideNav: typeof import('./../views/layout/components/SideNav/index.ts')['default']
     SideNavItem: typeof import('./../views/layout/components/SideNav/src/SideNavItem.vue')['default']
     TableDbclickUpdate: typeof import('./../views/ele-plus/components/TableDbclickUpdate.vue')['default']
+    TableInlineCopy: typeof import('./../views/ele-plus/components/TableInlineCopy.vue')['default']
     TerminalDate: typeof import('./../views/ts/ts-effect/components/TerminalDate.vue')['default']
     UploadFile: typeof import('./../views/ele-plus/components/UploadFile.vue')['default']
     UploadImg: typeof import('./../views/ele-plus/components/UploadImg.vue')['default']
