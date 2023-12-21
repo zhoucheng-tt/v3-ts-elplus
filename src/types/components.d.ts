@@ -11,6 +11,7 @@ declare module 'vue' {
     B: typeof import('./../views/css/css-effect/components/B.vue')['default']
     C: typeof import('./../views/css/css-effect/components/C.vue')['default']
     Carousel: typeof import('./../views/ele-plus/components/Carousel.vue')['default']
+    CodeEditor: typeof import('./../components/editor/CodeEditor.vue')['default']
     CopyInputInnerContent: typeof import('./../views/ts/ts-effect/components/CopyInputInnerContent.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCarousel: typeof import('element-plus/es')['ElCarousel']

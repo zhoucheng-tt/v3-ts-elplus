@@ -1,185 +1,46 @@
-/**
- * @name: 1-12个字符 可包含中文字母数字
- * @description:
- */
-export function roleNameVerify(rule: any, value: string, callback: Function) {
-  const reg = /^[\u4E00-\u9FA5A-Za-z0-9]{1,12}$/;
-  if (value) {
-    if (reg.test(value)) {
-      // 校验通过
-      return callback();
-    } else {
-      // 校验未通过
-      return callback(new Error('请输入1-12个字符 可包含中文字母数字'));
-    }
-  } else {
-    if (rule.required) {
-      // 必填
-      return callback('请输入!');
-    } else {
-      //  非必填
-      return callback();
-    }
-  }
-}
-
-/**
- * @name: 6-14个英文字母和数字，暂不支持特殊符号。
- * @description:
- */
-export function nameVerify(rule: any, value: string, callback: Function) {
-  const reg = /^[A-Za-z0-9]{6,14}$/;
-  if (value) {
-    if (reg.test(value)) {
-      // 校验通过
-      return callback();
-    } else {
-      // 校验未通过
-      return callback(new Error('请输入6-14个英文字母和数字，暂不支持特殊符号!'));
-    }
-  } else {
-    if (rule.required) {
-      // 必填
-      return callback('请输入!');
-    } else {
-      //  非必填
-      return callback();
-    }
-  }
-}
-
-/**
- * @name: 6-16位英文字母、数字或特殊符号
- * @description:
- */
-export function serectVerify(rule: any, value: string, callback: Function) {
-  const reg = /^[A-Za-z0-9`~!@#$%^&*(),./<>?;':"{}|]{6,16}$/;
-  if (value) {
-    if (reg.test(value)) {
-      // 校验通过
-      return callback();
-    } else {
-      // 校验未通过
-      return callback(new Error('请输入6-16位英文字母、数字或英文特殊符号!'));
-    }
-  } else {
-    if (rule.required) {
-      // 必填
-      return callback('请输入!');
-    } else {
-      //  非必填
-      return callback();
-    }
-  }
-}
-
-/**
- * @name: 手机号校验
- * @description:
- */
-export function phoneVerify(rule: any, value: string, callback: Function) {
-  const reg = /^1[3|4|5|6|7|8|9][0-9]\d{8}(,1[3|4|5|6|7|8|9][0-9]\d{8})*$/;
-  if (value) {
-    if (reg.test(value)) {
-      // 校验通过
-      return callback();
-    } else {
-      // 校验未通过
-      return callback(new Error('手机号码输入格式不正确!'));
-    }
-  } else {
-    if (rule.required) {
-      // 必填
-      return callback('请输入手机号码!');
-    } else {
-      //  非必填
-      return callback();
-    }
-  }
-}
-
-/**
- * @name: 邮箱校验
- * @description:
- */
-export function emailVerify(rule: any, value: string, callback: Function) {
-  const reg = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
-  if (value) {
-    if (reg.test(value)) {
-      // 校验通过
-      return callback();
-    } else {
-      // 校验未通过
-      return callback(new Error('邮箱输入格式不正确!'));
-    }
-  } else {
-    if (rule.required) {
-      // 必填
-      return callback('请输入正确的邮箱!');
-    } else {
-      //  非必填
-      return callback();
-    }
-  }
-}
-
-/**
- * @name:
- * @description: 不能含有汉字
- */
-export function notContainChinese(rule: any, value: string, callback: Function) {
-  const reg = /[\u4E00-\u9FA5]/g
-  if (value) {
-    // 已输入
-    if (!reg.test(value)) {
-      // 校验通过
-      return callback();
-    } else {
-      // 校验未通过
-      return callback(new Error('不能含有汉字'));
-    }
-  } else {
-    // 未输入
-    if (rule.required) {
-      // 必填
-      return callback('请输入!');
-    } else {
-      // 非必填
-      return callback();
-    }
-  }
-}
-
-/**
- * @name:
- * @description: 只能是数字
- */
-export function isNumber(rule: any, value: string, callback: Function) {
-  if (value) {
-    // 已输入
-    if (!isNaN(Number(value))) {
-      // 校验通过
-      return callback();
-    } else {
-      // 校验未通过
-      return callback(new Error('只能是数字'));
-    }
-  } else {
-    // 未输入
-    if (rule.required) {
-      // 必填
-      return callback(new Error('请输入'));
-    } else {
-      // 非必填
-      return callback();
-    }
-  }
-}
-
+import yaml from 'js-yaml' // npm install js-yaml
 import {CheckType} from "@/utils/checkType";
 
 type k = string | number | symbol
 type Json = Record<k, unknown> | Array<unknown>
+
+// Json转yaml
+export function yamlToJson(yamlStr: string) {
+  const jsonStrEct = yaml.load(yamlStr);
+  const jsonStr = JSON.stringify(jsonStrEct);
+  return jsonStr
+}
+
+// json 转 yaml
+export function jsonToYaml(jsonObj: any, depth = 0, inArray: boolean) {
+  const indent = '  ';
+  let s = '';
+  const isArray = Array.isArray(jsonObj);
+  for (const i in jsonObj) {
+    s += (inArray ? '' : indent.repeat(depth)) + (isArray ? '- ' : `${i}: `);
+    inArray = false;
+    const val = jsonObj[i];
+    switch (typeof val) {
+      case 'string':
+        const l = val.split('\n');
+        const d = '\n' + indent.repeat(depth + 1);
+        s += l.length > 1
+          ? `|${l[0][0] === ' ' ? `${indent.length * (depth + 1)}-` : ''}${d}${l.join(d)}`
+          : '`~!@#%&:,?\'"{}[]|-'.includes(val[0]) ? `"${val.replaceAll('"', '\\"')}"` : val;
+        s += '\n';
+        break;
+      case 'number':
+      case 'boolean':
+        s += `${val}`;
+        s += '\n';
+        break;
+      default:
+        s += isArray ? '' : '\n';
+        s += jsonToYaml(val, depth + 1, isArray);
+    }
+  }
+  return s;
+}
 
 /**
  * @name: 日期格式化
