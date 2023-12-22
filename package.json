@@ -8,6 +8,7 @@
   "dependencies": {
     "@antv/g2": "^5.1.12",
     "axios": "^1.6.2",
+    "codemirror": "^6.0.1",
     "element-plus": "^2.3.3",
     "js-yaml": "^4.1.0",
     "nprogress": "^0.2.0",

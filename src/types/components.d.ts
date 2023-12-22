@@ -56,5 +56,6 @@ declare module 'vue' {
     UploadImg: typeof import('./../views/ele-plus/components/UploadImg.vue')['default']
     UploadPic: typeof import('./../views/ele-plus/components/UploadPic.vue')['default']
     UserInfoCard: typeof import('./../views/layout/components/UserInfoCard.vue')['default']
+    YamlJson: typeof import('./../views/ts/ts-effect/components/YamlJson.vue')['default']
   }
 }

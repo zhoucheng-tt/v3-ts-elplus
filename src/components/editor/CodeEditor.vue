@@ -37,8 +37,8 @@
 
 <script setup lang="ts">
 import {ref, watch, onMounted, onBeforeUnmount, nextTick, reactive, computed} from "vue";
-// codemirror基础资源引入
-import CodeMirror, {EditorConfiguration, EditorFromTextArea} from "codemirror";
+// codemirror基础资源引入 npm install codemirror
+import CodeMirror from "codemirror";
 import "codemirror/lib/codemirror.css";
 // 编辑器模式
 import "codemirror/mode/javascript/javascript.js";
@@ -138,8 +138,8 @@ const emit = defineEmits(['update:modelValue', 'change', 'keyDownSave'])
 
 const codeEditor = ref();
 // 编辑器实例
-let editor: EditorFromTextArea | null = null
-const config: EditorConfiguration = {
+let editor: CodeMirror.EditorFromTextArea | null = null
+const config: CodeMirror.EditorConfiguration = {
     value: props.modelValue,
     // mime: "vue",
     mode: props.mode,

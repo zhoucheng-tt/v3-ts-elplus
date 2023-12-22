@@ -4,6 +4,23 @@ import {CheckType} from "@/utils/checkType";
 type k = string | number | symbol
 type Json = Record<k, unknown> | Array<unknown>
 
+// 把字符串按长度截取分行在html中展示 配合css：white-space: pre-line 使用
+export function splitText(str: string, maxLength: number) {
+  if (str.length <= maxLength) {
+    return str;
+  }
+
+  let result = '';
+  let i = 0;
+
+  while (i < str.length) {
+    result += str.slice(i, i + maxLength) + '\n';
+    i += maxLength;
+  }
+
+  return result.trim();
+}
+
 // Json转yaml
 export function yamlToJson(yamlStr: string) {
   const jsonStrEct = yaml.load(yamlStr);
