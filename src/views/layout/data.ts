@@ -53,4 +53,11 @@ export const routesSide: Array<SideRoute> = [
     defaultIcon: 'default.svg',
     activeIcon: 'active.svg',
   },
+  {
+    code: 'T004',
+    title: 'ECharts',
+    path: '/e-charts',
+    defaultIcon: 'default.svg',
+    activeIcon: 'active.svg',
+  },
 ]

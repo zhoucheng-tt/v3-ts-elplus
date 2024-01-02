@@ -6,7 +6,8 @@
  * @Path: src/views/test/index.vue
 -->
 <template>
-  <div class=""></div>
+  <div class="test-body">
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -14,5 +15,8 @@
 </script>
 
 <style lang='scss' scoped>
-
+.test-body {
+  width: 100%;
+  height: 100%;
+}
 </style>
