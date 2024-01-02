@@ -7,6 +7,7 @@
 -->
 <template>
   <div class="test-body">
+    test
   </div>
 </template>
 
