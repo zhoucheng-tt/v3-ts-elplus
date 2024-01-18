@@ -4,24 +4,7 @@ import {CheckType} from "@/utils/checkType";
 type k = string | number | symbol
 type Json = Record<k, unknown> | Array<unknown>
 
-// 把字符串按长度截取分行在html中展示 配合css：white-space: pre-line 使用
-export function splitText(str: string, maxLength: number) {
-  if (str.length <= maxLength) {
-    return str;
-  }
-
-  let result = '';
-  let i = 0;
-
-  while (i < str.length) {
-    result += str.slice(i, i + maxLength) + '\n';
-    i += maxLength;
-  }
-
-  return result.trim();
-}
-
-// Json转yaml
+// yaml 转 json
 export function yamlToJson(yamlStr: string) {
   const jsonStrEct = yaml.load(yamlStr);
   const jsonStr = JSON.stringify(jsonStrEct);
@@ -57,6 +40,47 @@ export function jsonToYaml(jsonObj: any, depth = 0, inArray: boolean) {
     }
   }
   return s;
+}
+
+// 把字符串按长度截取分行在html中展示 配合css：white-space: pre-line 使用
+export function splitText(str: string, maxLength: number) {
+  if (str.length <= maxLength) {
+    return str;
+  }
+
+  let result = '';
+  let i = 0;
+
+  while (i < str.length) {
+    result += str.slice(i, i + maxLength) + '\n';
+    i += maxLength;
+  }
+
+  return result.trim();
+}
+
+/**
+ * @name: 时间戳转换为时间
+ * @param timeStamp
+ * @param fmt
+ * @return {string} 返回格式化时间 2024-1-17 10:12:39
+ */
+export function timeStampToFmtTime(timeStamp: any, fmt: any) {
+  const date = new Date(timeStamp * 1000); // 将时间戳转换为毫秒并创建一个 Date 对象
+  let obj: Record<string, number> = {
+    'M+': date.getMonth() + 1,
+    'd+': date.getDate(),
+    'h+': date.getHours(),
+    'm+': date.getMinutes(),
+    's+': date.getSeconds(),
+  };
+  if (/(y+)/.test(fmt)) {
+    fmt = fmt.replace(RegExp.$1, (date.getFullYear() + ''))
+  }
+  for (const k in obj) {
+    if (new RegExp('(' + k + ')').test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (String(obj[k])) : (('00' + obj[k]).substr(('' + obj[k]).length)))
+  }
+  return fmt
 }
 
 /**
