@@ -9,8 +9,7 @@
   <div class="comp-body">
     <div class="comp-title">{{ label }}</div>
     <div class="comp-content">
-      <div ref="twoLineAreaRef"
-           id="twoLineAreaId"
+      <div id="twoLineAreaId"
            class="line-area-chart">
       </div>
     </div>
@@ -41,8 +40,6 @@ const props = defineProps({
     default: []
   }
 })
-
-const twoLineAreaRef = ref()
 
 onMounted(() => {
   initCharts(document.getElementById('twoLineAreaId'), props.xData, props.y1Data, props.y2Data, props.legendData)

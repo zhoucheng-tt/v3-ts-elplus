@@ -45,6 +45,7 @@ declare module 'vue' {
     LineAreaCharts: typeof import('./../views/echarts/components/LineAreaCharts.vue')['default']
     PageSelect: typeof import('./../views/ele-plus/components/PageSelect.vue')['default']
     PiantATriangle: typeof import('./../views/css/css-effect/components/PiantATriangle.vue')['default']
+    PieCharts: typeof import('./../views/echarts/components/PieCharts.vue')['default']
     RadioGroup: typeof import('./../views/ele-plus/components/RadioGroup.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

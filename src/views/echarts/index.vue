@@ -15,7 +15,11 @@
                  :xData="item.xData"
                  :y1Data="item.y1Data"
                  :y2Data="item.y2Data"
-                 :legendData="item.legendData"></component>
+                 :legendData="item.legendData"
+                 :title="item.title"
+                 :color="item.color"
+                 :data="item.data"
+      ></component>
     </div>
   </div>
 </template>
@@ -23,14 +27,29 @@
 <script setup lang="ts">
 import LineAreaCharts from "@/views/echarts/components/LineAreaCharts.vue";
 import TwoLineAreaCharts from "@/views/echarts/components/TwoLineAreaCharts.vue";
-
+import PieCharts from "@/views/echarts/components/PieCharts.vue";
+// 单图
 const xData = ref(['11/20\n19:41', '11/20\n19:42', '11/20\n19:43', '11/20\n19:44', '11/20\n19:45', '11/20\n19:46', '11/20\n19:47'])
 const y1Data = ref([60, 32, 46, 50, 45, 55, 36])
+// 双线/柱图
 const y2Data = ref([60, 32, 46, 50, 45, 55, 36])
 const legendData = ref(['出', '入'])
+// 饼图
+const title = ref('')
+const color = ['#FDA15A', '#0243EC', '#D9D9D9']
+const data = [
+  {name: '操作中', value: 12},
+  {name: '运行中', value: 30},
+  {name: '已停止', value: 23},
+]
 
 const list = shallowRef([
-  {label: '面积图', compName: LineAreaCharts, xData: xData.value, y1Data: y1Data.value},
+  {
+    label: '面积图',
+    compName: LineAreaCharts,
+    xData: xData.value,
+    y1Data: y1Data.value
+  },
   {
     label: '两条面积图',
     compName: TwoLineAreaCharts,
@@ -38,6 +57,13 @@ const list = shallowRef([
     y1Data: y1Data.value,
     y2Data: y2Data.value,
     legendData: legendData.value
+  },
+  {
+    label: '饼图',
+    compName: PieCharts,
+    title: title,
+    color: color,
+    data: data
   },
 ])
 </script>
