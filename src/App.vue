@@ -6,31 +6,43 @@
  * @Path: src/App.vue
 -->
 <template>
-  <el-config-provider :locale="locale">
-    <router-view/>
-  </el-config-provider>
+  <!--  <el-config-provider :locale="locale">-->
+  <!--    <router-view/>-->
+  <!--  </el-config-provider>-->
+  <el-tabs v-model="activeName" @tab-click="handleClick">
+    <el-tab-pane label="主应用" name="first">
+      <router-view/>
+    </el-tab-pane>
+    <el-tab-pane label="子应用" name="second">
+      <!-- 子应用的容器 -->
+      <div id="vue2pcId"></div>
+    </el-tab-pane>
+  </el-tabs>
 </template>
 
 <script setup lang="ts">
 import {ElConfigProvider} from 'element-plus'
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
-import {useHeaderTabsStore} from "@/store/modules/headertabs";
-import {onMounted} from "vue";
 
 const locale = zhCn
-const headertabsContent = useHeaderTabsStore()
+const activeName = ref('first')
+const router = useRouter()
 
-onMounted(() => {
-  if (localStorage.getItem('hearerTabsIndexList')) {
-    headertabsContent.hearerTabsIndexList = localStorage.getItem('hearerTabsIndexList')
+function handleClick(tab) {
+  console.log(tab, 'tabtabtab', tab.paneName)
+  if (tab.paneName === 'first') {
+    window.location.replace('http://localhost:8081/')
+  } else if (tab.paneName === 'second') {
+    router.push('/vue2pc/')
   }
-  if (localStorage.getItem('headerTabsList')) {
-    headertabsContent.headerTabsList = JSON.parse(localStorage.getItem('headerTabsList'))
-  }
-})
-
+}
 </script>
 
 <style>
+:deep(.el-tabs__header) {
+  position: relative;
+  padding: 0;
+  margin: 0 !important;
+}
 </style>
 

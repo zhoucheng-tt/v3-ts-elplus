@@ -30,9 +30,9 @@ const routes: Array<RouteRecordRaw> = [
   }]
 
 const router = createRouter({
-  // 4. 内部提供了 history 模式的实现。为了简单起见，我们在这里使用 hash 模式。
-  history: createWebHistory(),// createWebHistory:history模式 ;createWebHashHistory:hash模式
-  routes, // `routes: routes` 的缩写
+// createWebHistory:history模式 ;createWebHashHistory:hash模式
+  history: createWebHistory(),
+  routes,
 })
 
 NProgress.configure({

@@ -7,6 +7,12 @@ import {ElementPlusResolver} from 'unplugin-vue-components/resolvers'
 
 const path = require('path');
 export default defineConfig({
+  // @ts-ignore
+  devServer: {
+    headers: {
+      'Access-Control-Allow-Origin': '*',//重点1: 允许跨域访问子应用页面
+    }
+  },
   build: {
     rollupOptions: {
       output: {
