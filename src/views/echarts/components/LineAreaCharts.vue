@@ -6,9 +6,14 @@
  * @Path: src/views/echarts/components/LineAreaCharts.vue
 -->
 <template>
-  <div ref="lineAreaRef"
-       id="lineAreaId"
-       class="line-area-chart">
+  <div class="comp-body">
+    <div class="comp-title">{{ label }}</div>
+    <div class="comp-content">
+      <div ref="lineAreaRef"
+           id="lineAreaId"
+           class="line-area-chart">
+      </div>
+    </div>
   </div>
 </template>
 
@@ -16,16 +21,17 @@
 import echarts from "@/utils/echarts";
 
 const props = defineProps({
+  label: {},
   xData: {},
-  yData: {}
+  y1Data: {}
 })
 const lineAreaRef = ref()
 
 onMounted(() => {
-  initCharts(document.getElementById('lineAreaId'), props.xData, props.yData)
+  initCharts(document.getElementById('lineAreaId'), props.xData, props.y1Data)
 })
 onBeforeUnmount(() => {
-  lineAreaRef.value.disposeChart(document.getElementById('lineAreaId'))
+  disposeCharts(document.getElementById('lineAreaId'))
 })
 
 async function initCharts(idElement: any, xData: any, yData: any) {
@@ -102,13 +108,13 @@ async function initCharts(idElement: any, xData: any, yData: any) {
   })
 }
 
-function disposeChart(idElement: any) {
+function disposeCharts(idElement: any) {
   echarts.dispose(idElement)
 }
 
 defineExpose({
   initCharts,
-  disposeChart
+  disposeCharts
 })
 </script>
 
