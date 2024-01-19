@@ -57,7 +57,7 @@ async function initCharts(idElement: any, title: any, color: any, data: any) {
     // },
     color: color,
     title: {
-      text: '', // 设置饼图的标题内容
+      text: title, // 设置饼图的标题内容
       left: 'left', // 标题水平居中
       textStyle: {
         color: '#181818', // 字体颜色

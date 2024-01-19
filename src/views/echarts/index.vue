@@ -61,7 +61,7 @@ const list = shallowRef([
   {
     label: '饼图',
     compName: PieCharts,
-    title: title,
+    title: title.value,
     color: color,
     data: data
   },
