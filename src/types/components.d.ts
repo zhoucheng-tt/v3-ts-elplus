@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     A: typeof import('./../views/css/css-effect/components/A.vue')['default']
     B: typeof import('./../views/css/css-effect/components/B.vue')['default']
+    Base64ToImg: typeof import('./../views/css/css-effect/components/Base64ToImg.vue')['default']
     C: typeof import('./../views/css/css-effect/components/C.vue')['default']
     Carousel: typeof import('./../views/ele-plus/components/Carousel.vue')['default']
     CodeEditor: typeof import('./../components/editor/CodeEditor.vue')['default']

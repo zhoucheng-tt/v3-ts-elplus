@@ -7,26 +7,25 @@
 -->
 <template>
   <div class='home'>
-    <div>count: {{ count }}</div>
-    <TestA ref="testComRef"
-           :count="count"
-           @butClick="butClick"></TestA>
   </div>
 </template>
 
 <script setup lang="ts">
-import {ref} from "vue";
-import TestA from "./TestA.vue";
+const nums = [1, 2, 3, 1, 2, 3];
 
-const count = ref(0)
+removeElement(nums, 2)
 
-function butClick(val: number) {
-  count.value = val
-}
+function removeElement(nums, val) {
 
-// 获取子组件实例
-const testComRef = ref()
+  // for (let i = 0; i < nums.length; i++) {
+  //   if (nums[i] === val) {
+  //     console.log(nums[i])
+  //   }
+  // }
+  // return nums
+};
 </script>
+
 <style lang='scss' scoped>
 .test-body {
   width: 100%;

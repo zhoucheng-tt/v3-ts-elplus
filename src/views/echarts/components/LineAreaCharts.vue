@@ -42,6 +42,18 @@ async function initCharts(idElement: any, xData: any, yData: any) {
       bottom: '2%',  // 下边距
       containLabel: true  // 自动计算坐标轴标签的大小，以避免它们的溢出
     },
+    // dataZoom: [
+    //   {
+    //     type: 'slider',//x轴
+    //     xAxisIndex: 0,
+    //   },
+    //   {
+    //     type: 'inside',//x轴
+    //     xAxisIndex: 0,
+    //     zoomOnMouseWheel:'alt',
+    //     //如何触发缩放。可选值为：true：表示不按任何功能键，鼠标滚轮能触发缩放。false：表示鼠标滚轮不能触发缩放。'shift'：表示按住 shift 和鼠标滚轮能触发缩放。'ctrl'：表示按住 ctrl 和鼠标滚轮能触发缩放。'alt'：表示按住 alt 和鼠标滚轮能触发缩放。
+    //   },
+    // ],
     xAxis: {
       type: 'category',
       boundaryGap: false,

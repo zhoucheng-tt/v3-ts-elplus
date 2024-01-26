@@ -27,7 +27,7 @@ const props = defineProps({
 .comp-content {
   position: relative;
   width: 100%;
-  height: 40px;
+  height: 20px;
   background-color: #cccccc;
   position: relative;
 
