@@ -33,12 +33,12 @@ const props = defineProps({
 })
 
 const dialogVisible = ref(false)
+const rollSilderCompRef = ref()
 
 function handleClick() {
   dialogVisible.value = !dialogVisible.value
+  rollSilderCompRef.value.openModal()
 }
-
-const rollSilderCompRef = ref()
 
 function successSubmit() {
   dialogVisible.value = false
