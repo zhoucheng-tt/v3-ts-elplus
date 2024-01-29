@@ -7,6 +7,7 @@
 -->
 <template>
   <div class='home'>
+    <div class="need-bg" style="background-image: url('@/assets/layout/active.svg')"></div>
   </div>
 </template>
 
@@ -30,5 +31,9 @@ function removeElement(nums, val) {
 .test-body {
   width: 100%;
   height: 100%;
+}
+.need-bg{
+  width: 100px;
+  height: 100px;
 }
 </style>

@@ -60,4 +60,11 @@ export const routesSide: Array<SideRoute> = [
     defaultIcon: 'default.svg',
     activeIcon: 'active.svg',
   },
+  {
+    code: 'T005',
+    title: '验证码',
+    path: '/verify-code',
+    defaultIcon: 'default.svg',
+    activeIcon: 'active.svg',
+  },
 ]
