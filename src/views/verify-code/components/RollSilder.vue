@@ -12,14 +12,9 @@
       <div class="flex-center">
         <el-button type="primary" @click="handleClick">点 击</el-button>
       </div>
-      <!--      <el-dialog v-model="dialogVisible"-->
-      <!--                 :show-close=false-->
-      <!--                 :align-center=true-->
-      <!--                 append-to-rollSilderCompRef>-->
       <RollSilderComp v-if="dialogVisible"
                       ref="rollSilderCompRef"
                       @success="successSubmit"/>
-      <!--      </el-dialog>-->
     </div>
   </div>
 </template>
@@ -37,7 +32,7 @@ const rollSilderCompRef = ref()
 
 function handleClick() {
   dialogVisible.value = !dialogVisible.value
-  rollSilderCompRef.value.openModal()
+  // rollSilderCompRef.value.openModal()
 }
 
 function successSubmit() {

@@ -60,10 +60,10 @@ const emits = defineEmits(['success'])
 const block = ref(null);
 const msg = ref("");
 
-function openModal() {
-  commonData.verifyState = true
-  block.value?.refresh();
-}
+// function openModal() {
+//   commonData.verifyState = true
+//   block.value?.refresh();
+// }
 
 function onAgain() {
   msg.value = "检测到非人为操作，请再试一次！";
@@ -86,9 +86,9 @@ function onRefresh() {
   msg.value = "点击了刷新小图标";
 }
 
-defineExpose({
-  openModal
-})
+// defineExpose({
+//   openModal
+// })
 </script>
 
 <style lang='scss' scoped>

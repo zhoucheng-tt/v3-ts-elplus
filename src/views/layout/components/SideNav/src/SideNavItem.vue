@@ -15,22 +15,22 @@
                   effect="dark"
                   placement="right">
         <div class="tooltip-content">
-          <div class="tooltip-img">
-            <img v-if="globalStore.sideMenuActive !==item.code"
-                 :src="imgUrl.getLayoutIcon(item.defaultIcon)"
-                 alt="">
-            <img v-else
-                 :src="imgUrl.getLayoutIcon(item.activeIcon)"
-                 alt="">
-          </div>
-          <div class="tooltip-title"> {{ item.title }}</div>
+          <img v-if="globalStore.sideMenuActive!==item.code"
+               :src="imgUrl.getLayoutIcon(item.defaultIcon)"
+               alt="">
+          <img v-else
+               :src="imgUrl.getLayoutIcon(item.activeIcon)"
+               alt="">
+          {{ item.title }}
         </div>
       </el-tooltip>
     </el-menu-item>
     <el-sub-menu v-else
                  :index="item.code">
       <template #title>
-        {{ item.title }}
+        <div class="flex-center">
+          {{ item.title }}
+        </div>
       </template>
       <side-nav-item v-for="child in item.children"
                      :key="child.code"
@@ -43,8 +43,6 @@
 import imgUrl from '@/utils/imgUrl'
 import {useGlobalStore} from '@/store'
 
-const globalStore = useGlobalStore()
-
 defineProps({
   item: {
     type: Object,
@@ -52,45 +50,24 @@ defineProps({
   }
 })
 
+const globalStore = useGlobalStore()
+
 function hasChild(itemChildren: [] | undefined) {
   return itemChildren !== undefined && itemChildren.length !== 0
 }
 </script>
 
 <style lang='scss' scoped>
-//@import url(); 引入公共css类
 .side-nav-item {
   width: 100%;
 
-  .el-menu-item {
-    height: 80px;
-    margin-top: 5px;
-    padding-top: 7px;
+  .tooltip-content {
+    display: flex;
+    align-content: center;
 
-    .tooltip-content {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-
-      .tooltip-img {
-        height: 46px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        img {
-          //width: 48px;
-          //height: 46px;
-        }
-      }
-
-      .tooltip-title {
-        height: 20px;
-        font-size: 14px;
-        font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
-        line-height: 20px;
-      }
+    img {
+      width: 15px;
+      margin-right: 2px;
     }
   }
 }

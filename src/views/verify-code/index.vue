@@ -22,7 +22,7 @@ import RollSilder from "@/views/verify-code/components/RollSilder.vue";
 
 const list = shallowRef([
   {compName: RollSilder, label: '滚动滑块'},
-  {compName: NumTextImg, label: '数字图文'},
+  // {compName: NumTextImg, label: '数字图文'},
 ])
 </script>
 
