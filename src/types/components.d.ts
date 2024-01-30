@@ -64,6 +64,7 @@ declare module 'vue' {
     TableInlineCopy: typeof import('./../views/ele-plus/components/TableInlineCopy.vue')['default']
     TerminalDate: typeof import('./../views/ts/ts-effect/components/TerminalDate.vue')['default']
     TwoLineAreaCharts: typeof import('./../views/echarts/components/TwoLineAreaCharts.vue')['default']
+    UploadComp: typeof import('./../views/ele-plus/components/UploadComp.vue')['default']
     UploadFile: typeof import('./../views/ele-plus/components/UploadFile.vue')['default']
     UploadFileComp: typeof import('./../views/ele-plus/components/UploadFileComp.vue')['default']
     UpLoadFileComp: typeof import('./../views/ele-plus/components/UpLoadFileComp.vue')['default']
