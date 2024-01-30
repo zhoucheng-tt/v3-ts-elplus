@@ -6,12 +6,11 @@
  * @Path: src/App.vue
 -->
 <template>
-  <!--  <el-config-provider :locale="locale">-->
-  <!--    <router-view/>-->
-  <!--  </el-config-provider>-->
   <el-tabs v-model="activeName" @tab-click="handleClick">
     <el-tab-pane label="主应用" name="first">
-      <router-view/>
+        <el-config-provider :locale="locale">
+          <router-view/>
+        </el-config-provider>
     </el-tab-pane>
     <el-tab-pane label="子应用" name="second">
       <!-- 子应用的容器 -->
@@ -28,8 +27,7 @@ const locale = zhCn
 const activeName = ref('first')
 const router = useRouter()
 
-function handleClick(tab) {
-  console.log(tab, 'tabtabtab', tab.paneName)
+function handleClick(tab:any) {
   if (tab.paneName === 'first') {
     window.location.replace('http://localhost:8081/')
   } else if (tab.paneName === 'second') {

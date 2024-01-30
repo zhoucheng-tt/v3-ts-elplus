@@ -7,33 +7,14 @@
 -->
 <template>
   <div class='home'>
-    <div class="need-bg" style="background-image: url('@/assets/layout/active.svg')"></div>
+    1231312
   </div>
 </template>
 
 <script setup lang="ts">
-const nums = [1, 2, 3, 1, 2, 3];
-
-removeElement(nums, 2)
-
-function removeElement(nums, val) {
-
-  // for (let i = 0; i < nums.length; i++) {
-  //   if (nums[i] === val) {
-  //     console.log(nums[i])
-  //   }
-  // }
-  // return nums
-};
 </script>
 
 <style lang='scss' scoped>
-.test-body {
-  width: 100%;
-  height: 100%;
-}
-.need-bg{
-  width: 100px;
-  height: 100px;
+.home {
 }
 </style>

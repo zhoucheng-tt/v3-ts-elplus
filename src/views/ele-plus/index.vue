@@ -7,17 +7,6 @@
 -->
 <template>
   <div class="mainbody">
-    <div class="item length-comp-box-item">
-      <div style="display: flex;justify-content: center;">
-        <el-button type="primary" @click="uploadChange = !uploadChange">切换</el-button>
-      </div>
-      <UploadImg v-model="avatar"
-                 :cantUpload="uploadChange"
-                 :cantDelete="uploadChange"></UploadImg>
-    </div>
-    <div class="item length-comp-box-item">
-      <UploadFile v-model="fileUrl"></UploadFile>
-    </div>
     <div class="item length-comp-box-item"
          v-for="(item,index) in list"
          :key="index">
@@ -34,20 +23,19 @@ import TableDbclickUpdate from "@/views/ele-plus/components/TableDbclickUpdate.v
 import RadioGroup from "@/views/ele-plus/components/RadioGroup.vue";
 import Carousel from "@/views/ele-plus/components/Carousel.vue";
 import TableInlineCopy from "@/views/ele-plus/components/TableInlineCopy.vue";
+import UploadImg from "@/views/ele-plus/components/UploadImg.vue";
+import UploadFile from "@/views/ele-plus/components/UploadFile.vue";
+import AweekDTPicker from "@/views/ele-plus/components/AweekDTPicker.vue";
 
 const list = shallowRef([
+  {compName: AweekDTPicker, label: '默认七天时间选择器'},
+  {compName: UploadImg, label: '上传图片/上传文件'},
   {compName: PageSelect, label: '自写分页并实现跨页多选'},
   {compName: TableInlineCopy, label: '表格行内复制'},
   {compName: TableDbclickUpdate, label: '表格双击修改'},
   {compName: RadioGroup, label: '打钩的ElRaido'},
   {compName: Carousel, label: '自定义图标走马灯'},
 ])
-
-// 头像上传
-const uploadChange = ref(true)
-const avatar = ref()
-// 上传文件
-const fileUrl = ref()
 </script>
 
 <style lang='scss' scoped>
