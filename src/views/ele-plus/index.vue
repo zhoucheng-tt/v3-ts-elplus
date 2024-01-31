@@ -6,13 +6,23 @@
  * @Path: src/views/ele-plus/index.vue
 -->
 <template>
-  <div class="mainbody">
-    <div class="item length-comp-box-item"
-         v-for="(item,index) in list"
-         :key="index">
-      <component style="margin-top: 10px"
-                 :is="item.compName"
-                 :label="item.label"></component>
+  <div>
+    <div class="mainbody-line">
+      <div class="item"
+           v-for="(item,index) in listLine"
+           :key="index">
+        <component style="margin-top: 10px"
+                   :is="item.compName"
+                   :label="item.label"></component>
+      </div>
+    </div>
+    <div class="mainbody-column">
+      <div class="item flex-center"
+           v-for="(item,index) in listColumn"
+           :key="index">
+        <component :is="item.compName"
+                   :label="item.label"></component>
+      </div>
     </div>
   </div>
 </template>
@@ -26,14 +36,16 @@ import PageSelect from "@/views/ele-plus/components/PageSelect.vue";
 import UploadComp from "@/views/ele-plus/components/UploadComp.vue";
 import AweekDTPicker from "@/views/ele-plus/components/AweekDTPicker.vue";
 
-const list = shallowRef([
+const listLine = shallowRef([
   {compName: AweekDTPicker, label: '默认七天时间选择器'},
   {compName: UploadComp, label: '上传图片/上传文件'},
   {compName: PageSelect, label: '自写分页并实现跨页多选'},
-  {compName: TableInlineCopy, label: '表格行内复制'},
-  {compName: TableDbclickUpdate, label: '表格双击修改'},
-  {compName: RadioGroup, label: '打钩的ElRaido'},
   {compName: Carousel, label: '自定义图标走马灯'},
+])
+const listColumn = shallowRef([
+  {compName: RadioGroup, label: '打钩的ElRaido'},
+  {compName: TableDbclickUpdate, label: '表格双击修改'},
+  {compName: TableInlineCopy, label: '表格行内复制'},
 ])
 </script>
 

@@ -1,7 +1,7 @@
 <template>
-  <div class="mainbody">
-    <div class="length-comp-box-item"
-         v-for="(item,index) in list"
+  <div class="mainbody-line">
+    <div class="item"
+         v-for="(item,index) in listLine"
          :key="index">
       <component :is="item.compName"
                  :label="item.label"></component>
@@ -10,8 +10,7 @@
 </template>
 
 <script setup lang="ts">
-
-const list = shallowRef([
+const listLine = shallowRef([
   {compName: '', label: ''},
 ])
 </script>

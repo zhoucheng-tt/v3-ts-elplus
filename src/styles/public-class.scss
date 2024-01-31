@@ -34,7 +34,6 @@
   cursor: pointer;
 }
 
-
 // 表格下的分页
 .table-pagination {
   width: 100%;
@@ -62,14 +61,31 @@
   }
 }
 
-.mainbody {
+// 主页面
+.mainbody-column {
   width: 100%;
-  height: 100%;
-  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+
+  .item {
+    width: 24%;
+    height: 200px;
+    margin: 5px 0.5%;
+    box-shadow: 0px 2px 20px 0px rgba(76, 100, 134, 0.1) inset;
+  }
+}
+
+.mainbody-line {
+  width: 100%;
+
+  .item {
+    box-shadow: 0px 2px 20px 0px rgba(76, 100, 134, 0.2) inset;
+  }
 }
 
 // 全局公共样式
-.mainbody::-webkit-scrollbar {
+.mainbody-column::-webkit-scrollbar, .mainbody-line::-webkit-scrollbar {
   width: 0px;
   height: 0px
 }
@@ -78,44 +94,25 @@
 .comp-body {
   width: 100%;
   height: 100%;
+
+  .comp-title {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .comp-content {
+    width: 100%;
+    height: calc(100% - 30px);
+    box-sizing: border-box;
+    padding: 5px;
+  }
 }
 
 .comp-body:hover {
-  box-shadow: 0px 2px 20px 0px rgba(76, 100, 134, 0.1);
-}
-
-.comp-title {
-  width: 100%;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  font-size: 16px;
-}
-
-.comp-content {
-  width: 100%;
-  height: calc(100% - 30px);
-  box-sizing: border-box;
-  padding: 5px;
-}
-
-.comp-box-item {
-  width: 24%;
-  height: 30%;
-  margin: 5px 0.5%;
-  background: #FFFFFF;
-  box-shadow: 0px 2px 20px 0px rgba(76, 100, 134, 0.1);
-  border-radius: 2px;
-}
-
-.length-comp-box-item {
-  width: 100%;
-  height: 30%;
-  box-sizing: border-box;
-  margin: 5px 0.5%;
-  background: #FFFFFF;
-  box-shadow: 0px 2px 20px 0px rgba(76, 100, 134, 0.1);
-  border-radius: 2px;
+  box-shadow: 0px 2px 20px 0px var(--el-color-primary) inset;
 }
 
 .flex-center {

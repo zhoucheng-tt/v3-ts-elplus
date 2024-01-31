@@ -9,8 +9,8 @@
   <div class="comp-body">
     <div class="comp-title">{{ label }}</div>
     <div class="comp-content">
-      <div class="comp-box-item flex-center">0</div>
-      <div class="comp-box-item flex-center"
+      <div class="comp-content-item flex-center">0</div>
+      <div class="comp-content-item flex-center"
            v-for="(item,index) in list"
            :key="index">{{ item.name }}
       </div>
@@ -39,5 +39,14 @@ const list = ref([
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
+}
+
+.comp-content-item {
+  width: 24%;
+  height: 30%;
+  margin: 5px 0.5%;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 20px 0px rgba(76, 100, 134, 0.1);
+  border-radius: 2px;
 }
 </style>

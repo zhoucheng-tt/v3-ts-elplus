@@ -7,7 +7,8 @@
 -->
 <template>
   <div class="user-info">
-    v3-Ts-ElementPlus
+    <div class="sanjiao"></div>
+    <span>v3-Ts-ElementPlus</span>
   </div>
 </template>
 
@@ -27,9 +28,21 @@ export default {
   display: flex;
   align-items: center;
   margin-left: 20px;
-  font-size: 18px;
+  position: relative;
   font-family: PingFangSC-Medium, PingFang SC;
+  font-size: 18px;
   font-weight: 500;
   color: #2E323B;
+
+  .sanjiao {
+    z-index: 10000;
+    position: absolute;
+    top: 100%; /* 当鼠标移动到容器上时，将箭头定位在容器下方 */
+    left: 50%; /* 水平居中 */
+    transform: translateX(-50%); /* 通过变换使箭头垂直居中 */
+    border-width: 15px; /* 箭头大小 */
+    border-style: solid; /* 箭头样式 */
+    border-color: #cccccc transparent transparent transparent; /* 箭头颜色 */
+  }
 }
 </style>

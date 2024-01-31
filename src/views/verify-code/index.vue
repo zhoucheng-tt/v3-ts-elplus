@@ -6,8 +6,8 @@
  * @Path: src/views/verify-code/index.vue
 -->
 <template>
-  <div class="mainbody">
-    <div class="item comp-box-item flex-center"
+  <div class="mainbody-column">
+    <div class="item flex-center"
          v-for="(item,index) in list"
          :key="index">
       <component :is="item.compName"
@@ -27,15 +27,5 @@ const list = shallowRef([
 </script>
 
 <style lang='scss' scoped>
-.mainbody {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
 
-  .item {
-    width: 24%;
-    height: 200px;
-    margin: 5px 0.5%;
-  }
-}
 </style>

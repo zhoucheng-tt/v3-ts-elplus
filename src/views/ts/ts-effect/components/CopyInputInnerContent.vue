@@ -1,5 +1,5 @@
 <!--
- * @Description:
+ * @Description:复制内容
  * @Author: zhoucheng
  * @Github: https://github.com/zhoucheng
  * @Date: 2023/12/20 10:09
@@ -9,14 +9,13 @@
   <div class="comp-body">
     <div class="comp-title">{{ label }}</div>
     <div class="comp-content">
-      <div>
+      <div class="flex-center">
         <el-button type="primary"
                    @click="handleClickCopy('inputId',input)">复制
         </el-button>
       </div>
       <div>
-        <el-input style="width:500px;margin-top: 20px"
-                  id="inputId"
+        <el-input id="inputId"
                   v-model="input"
                   :rows="2"
                   :max="100"

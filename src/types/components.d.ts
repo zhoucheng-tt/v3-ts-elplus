@@ -7,11 +7,8 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    A: typeof import('./../views/css/css-effect/components/A.vue')['default']
     AweekDTPicker: typeof import('./../views/ele-plus/components/AweekDTPicker.vue')['default']
-    B: typeof import('./../views/css/css-effect/components/B.vue')['default']
     Base64ToImg: typeof import('./../views/css/css-effect/components/Base64ToImg.vue')['default']
-    C: typeof import('./../views/css/css-effect/components/C.vue')['default']
     Carousel: typeof import('./../views/ele-plus/components/Carousel.vue')['default']
     CodeEditor: typeof import('./../components/editor/CodeEditor.vue')['default']
     CopyInputInnerContent: typeof import('./../views/ts/ts-effect/components/CopyInputInnerContent.vue')['default']
@@ -42,6 +39,7 @@ declare module 'vue' {
     ElTabPane: typeof import('element-plus/es')['ElTabPane']
     ElTabs: typeof import('element-plus/es')['ElTabs']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
+    ElTree: typeof import('element-plus/es')['ElTree']
     ElUpload: typeof import('element-plus/es')['ElUpload']
     FourDivision: typeof import('./../views/css/css-effect/components/FourDivision.vue')['default']
     Header: typeof import('./../views/layout/components/SideNav/src/Header.vue')['default']
@@ -50,7 +48,6 @@ declare module 'vue' {
     LineAreaCharts: typeof import('./../views/echarts/components/LineAreaCharts.vue')['default']
     NumTextImg: typeof import('./../views/verify-code/components/NumTextImg.vue')['default']
     PageSelect: typeof import('./../views/ele-plus/components/PageSelect.vue')['default']
-    PiantATriangle: typeof import('./../views/css/css-effect/components/PiantATriangle.vue')['default']
     PieCharts: typeof import('./../views/echarts/components/PieCharts.vue')['default']
     RadioGroup: typeof import('./../views/ele-plus/components/RadioGroup.vue')['default']
     RollSilder: typeof import('./../views/verify-code/components/RollSilder.vue')['default']
@@ -65,12 +62,8 @@ declare module 'vue' {
     TerminalDate: typeof import('./../views/ts/ts-effect/components/TerminalDate.vue')['default']
     TwoLineAreaCharts: typeof import('./../views/echarts/components/TwoLineAreaCharts.vue')['default']
     UploadComp: typeof import('./../views/ele-plus/components/UploadComp.vue')['default']
-    UploadFile: typeof import('./../views/ele-plus/components/UploadFile.vue')['default']
     UploadFileComp: typeof import('./../views/ele-plus/components/UploadFileComp.vue')['default']
-    UpLoadFileComp: typeof import('./../views/ele-plus/components/UpLoadFileComp.vue')['default']
-    UploadImg: typeof import('./../views/ele-plus/components/UploadImg.vue')['default']
     UploadImgComp: typeof import('./../views/ele-plus/components/UploadImgComp.vue')['default']
-    UploadPic: typeof import('./../views/ele-plus/components/UploadPic.vue')['default']
     UserInfoCard: typeof import('./../views/layout/components/UserInfoCard.vue')['default']
     YamlJson: typeof import('./../views/ts/ts-effect/components/YamlJson.vue')['default']
   }
