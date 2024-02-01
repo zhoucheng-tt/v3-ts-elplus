@@ -7,12 +7,12 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AboutDate: typeof import('./../views/ts/ts-common/components/AboutDate.vue')['default']
     AweekDTPicker: typeof import('./../views/ele-plus/components/AweekDTPicker.vue')['default']
     Base64ToImg: typeof import('./../views/css/css-effect/components/Base64ToImg.vue')['default']
     Carousel: typeof import('./../views/ele-plus/components/Carousel.vue')['default']
     CodeEditor: typeof import('./../components/editor/CodeEditor.vue')['default']
     CopyInputInnerContent: typeof import('./../views/ts/ts-effect/components/CopyInputInnerContent.vue')['default']
-    cpy: typeof import('./../views/ele-plus/components/UploadFile cpy.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCarousel: typeof import('element-plus/es')['ElCarousel']
     ElCarouselItem: typeof import('element-plus/es')['ElCarouselItem']
@@ -60,11 +60,12 @@ declare module 'vue' {
     TableDbclickUpdate: typeof import('./../views/ele-plus/components/TableDbclickUpdate.vue')['default']
     TableInlineCopy: typeof import('./../views/ele-plus/components/TableInlineCopy.vue')['default']
     TerminalDate: typeof import('./../views/ts/ts-effect/components/TerminalDate.vue')['default']
+    TsOther: typeof import('./../views/ts/ts-common/components/TsOther.vue')['default']
     TwoLineAreaCharts: typeof import('./../views/echarts/components/TwoLineAreaCharts.vue')['default']
     UploadComp: typeof import('./../views/ele-plus/components/UploadComp.vue')['default']
     UploadFileComp: typeof import('./../views/ele-plus/components/UploadFileComp.vue')['default']
     UploadImgComp: typeof import('./../views/ele-plus/components/UploadImgComp.vue')['default']
     UserInfoCard: typeof import('./../views/layout/components/UserInfoCard.vue')['default']
-    YamlJson: typeof import('./../views/ts/ts-effect/components/YamlJson.vue')['default']
+    YamlJson: typeof import('./../views/ts/ts-common/components/YamlJson.vue')['default']
   }
 }

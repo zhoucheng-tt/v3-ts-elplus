@@ -6,9 +6,9 @@
  * @Path: src/views/ts/ts-effect/index.vue
 -->
 <template>
-  <div class="mainbody-column">
-    <div class="item  flex-center"
-         v-for="(item,index) in listColumn"
+  <div class="mainbody-line">
+    <div class="item"
+         v-for="(item,index) in listLine"
          :key="index">
       <component :is="item.compName"
                  :label="item.label"></component>
@@ -17,12 +17,15 @@
 </template>
 
 <script setup lang="ts">
-import CopyInputInnerContent from "@/views/ts/ts-effect/components/CopyInputInnerContent.vue";
+import AboutDate from "@/views/ts/ts-common/components/AboutDate.vue";
+import TsOther from "@/views/ts/ts-common/components/TsOther.vue";
 
-const listColumn = shallowRef([
-  {compName: CopyInputInnerContent, label: '复制输入框内的内容'},
+const listLine = shallowRef([
+  {compName: AboutDate, label: '时间'},
+  {compName: TsOther, label: '其他Ts'},
 ])
 </script>
 
 <style lang='scss' scoped>
+
 </style>

@@ -4,6 +4,15 @@ import {CheckType} from "@/utils/checkType";
 type k = string | number | symbol
 type Json = Record<k, unknown> | Array<unknown>
 
+export function querySystem() {
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if (isMobile) {
+    return '手机端'
+  } else {
+    return 'PC端'
+  }
+}
+
 // yaml 转 json
 export function yamlToJson(yamlStr: string) {
   const jsonStrEct = yaml.load(yamlStr);
@@ -61,9 +70,9 @@ export function splitText(str: string, maxLength: number) {
 
 /**
  * @name: 时间戳转换为时间
- * @param timeStamp
- * @param fmt
- * @return {string} 返回格式化时间 2024-1-17 10:12:39
+ * @param timeStamp 1706754185
+ * @param fmt       yyyy-MM-dd hh:mm:ss
+ * @return {string} 2024-1-17 10:12:39
  */
 export function timeStampToFmtTime(timeStamp: any, fmt: any) {
   const date = new Date(timeStamp * 1000); // 将时间戳转换为毫秒并创建一个 Date 对象
@@ -85,10 +94,9 @@ export function timeStampToFmtTime(timeStamp: any, fmt: any) {
 
 /**
  * @name: 日期格式化
- * @description:
- * @param {Date} date
- * @param {string} fmt
- * @return {string} {*}
+ * @param {Date} date   new Date()
+ * @param {string} fmt  yyyy-MM-dd hh:mm:ss
+ * @return {string}     2024-1-17 10:12:39
  */
 export function formatDate(date: Date, fmt: string): string {
   if (!CheckType.isDate(date)) date = new Date(date)

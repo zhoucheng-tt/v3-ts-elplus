@@ -43,6 +43,13 @@ export const routesSide: Array<SideRoute> = [
         path: '/ts-effect',
         defaultIcon: 'default.svg',
         activeIcon: 'active.svg',
+      },
+      {
+        code: 'T0022',
+        title: 'common',
+        path: '/ts-common',
+        defaultIcon: 'default.svg',
+        activeIcon: 'active.svg',
       }
     ],
   },
