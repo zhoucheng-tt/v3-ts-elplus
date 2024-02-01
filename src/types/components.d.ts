@@ -42,6 +42,7 @@ declare module 'vue' {
     ElTree: typeof import('element-plus/es')['ElTree']
     ElUpload: typeof import('element-plus/es')['ElUpload']
     FourDivision: typeof import('./../views/css/css-effect/components/FourDivision.vue')['default']
+    HamburgerMenu: typeof import('./../views/css/css-effect/components/HamburgerMenu.vue')['default']
     Header: typeof import('./../views/layout/components/SideNav/src/Header.vue')['default']
     HeaderTabs: typeof import('./../views/layout/components/HeaderTabs.vue')['default']
     HoverCard: typeof import('./../views/css/css-effect/components/HoverCard.vue')['default']

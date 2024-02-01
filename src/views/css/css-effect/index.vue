@@ -19,10 +19,12 @@
 <script setup lang="ts">
 import FourDivision from "@/views/css/css-effect/components/FourDivision.vue";
 import HoverCard from "@/views/css/css-effect/components/HoverCard.vue";
+import HamburgerMenu from "@/views/css/css-effect/components/HamburgerMenu.vue";
 
 const list = shallowRef([
-  {compName: FourDivision, label: '四分隔效果'},
+  {compName: HamburgerMenu, label: '汉堡菜单'},
   {compName: HoverCard, label: '悬浮效果'},
+  {compName: FourDivision, label: '四分隔效果'},
 ])
 </script>
 
