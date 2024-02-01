@@ -9,19 +9,19 @@
   <div class="comp-body">
     <div class="comp-title">{{ label }}</div>
     <div class="comp-content">
-      <div class="flex-center">
+      <div class="flex-center"
+           style="margin-bottom: 10px">
         <el-button type="primary"
                    @click="handleClickCopy('inputId',input)">复制
         </el-button>
       </div>
-      <div>
-        <el-input id="inputId"
-                  v-model="input"
-                  :rows="2"
-                  :max="100"
-                  type="textarea"
-                  placeholder="请输入"/>
-      </div>
+
+      <el-input id="inputId"
+                v-model="input"
+                :rows="2"
+                :max="100"
+                type="textarea"
+                placeholder="请输入"/>
     </div>
   </div>
 </template>
@@ -40,14 +40,14 @@ function handleClickCopy(label: string, value: string) {
   if (value) {
     const range = document.createRange(); // 创建range对象
     const id: any = document.getElementById(label)
-    range.selectNode(id); //获取复制内容的 id 选择器
-    const selection: any = window.getSelection();  //创建 selection对象
-    //如果页面已经有选取了的话，会自动删除这个选区，没有选区的话，会把这个选取加入选区
+    range.selectNode(id); // 获取复制内容的 id 选择器
+    const selection: any = window.getSelection();  // 创建 selection对象
+    // 如果页面已经有选取了的话，会自动删除这个选区，没有选区的话，会把这个选取加入选区
     if (selection.rangeCount > 0) {
       selection.removeAllRanges()
     }
     selection.addRange(range); // 将range对象添加到selection选区当中，会高亮文本块
-    document.execCommand('copy'); //复制选中的文字到剪贴板
+    document.execCommand('copy'); // 复制选中的文字到剪贴板
     ElMessage({message: '复制成功！', type: 'success',})
     selection.removeRange(range); // 移除选中的元素
   } else {
