@@ -6,7 +6,7 @@
  * @Path: src/views/ele-plus/index.vue
 -->
 <template>
-  <div>
+  <div class="two-type">
     <div class="mainbody-line">
       <div class="item"
            v-for="(item,index) in listLine"
@@ -31,10 +31,11 @@
 import Carousel from "@/views/ele-plus/components/Carousel.vue";
 import RadioGroup from "@/views/ele-plus/components/RadioGroup.vue";
 import TableDbclickUpdate from "@/views/ele-plus/components/TableDbclickUpdate.vue";
-import TableInlineCopy from "@/views/ele-plus/components/TableInlineCopy.vue";
 import PageSelect from "@/views/ele-plus/components/PageSelect.vue";
 import UploadComp from "@/views/ele-plus/components/UploadComp.vue";
 import AweekDTPicker from "@/views/ele-plus/components/AweekDTPicker.vue";
+import TableInlineCopy from "@/views/ele-plus/components/TableInlineCopy.vue";
+import SelfMakeUpTree from "@/views/ele-plus/components/SelfMakeUpTree.vue";
 
 const listLine = shallowRef([
   {compName: AweekDTPicker, label: '默认七天时间选择器'},
@@ -43,6 +44,7 @@ const listLine = shallowRef([
   {compName: Carousel, label: '自定义图标走马灯'},
 ])
 const listColumn = shallowRef([
+  {compName: SelfMakeUpTree, label: '自写生成tree+num'},
   {compName: RadioGroup, label: '打钩的ElRaido'},
   {compName: TableDbclickUpdate, label: '表格双击修改'},
   {compName: TableInlineCopy, label: '表格行内复制'},
@@ -50,5 +52,7 @@ const listColumn = shallowRef([
 </script>
 
 <style lang='scss' scoped>
-
+.two-type {
+  padding-bottom: 30px;
+}
 </style>

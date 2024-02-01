@@ -55,6 +55,7 @@ declare module 'vue' {
     RollSlider: typeof import('./../views/verify-code/components/RollSlider.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SelfMakeUpTree: typeof import('./../views/ele-plus/components/SelfMakeUpTree.vue')['default']
     SideNav: typeof import('./../views/layout/components/SideNav/index.ts')['default']
     SideNavItem: typeof import('./../views/layout/components/SideNav/src/SideNavItem.vue')['default']
     TableDbclickUpdate: typeof import('./../views/ele-plus/components/TableDbclickUpdate.vue')['default']
